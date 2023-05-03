@@ -1,0 +1,219 @@
+
+AI -->SMART APPLICATION that can perform its own task without any HUMAN INTERVENTION 
+EXAMPLE : self driving cars
+
+ML---> STATISTICAL TOOL to perform exploration,analyzation,visuvalization and prediction and classification
+EXAMPLE : RECOMMENDATION SYSTEM 
+
+if we combine ml with any app then ai application will be created
+example : recommendation system + netflix
+
+DL--->EXTENSION/SUBSET OF ML
+	MIMIC HUMAN BRAIN
+	
+LINEAR REGRESSION
+
+model can be considered as hypothesis ie is i can reject this model or accept this model
+
+Aim : to create a best fit line in such a way that the summation of all the error should be minimal
+
+for feature more than 2 independent variable we will create 3 d graph and we will create a 2d plane
+
+slope/coefficient -->for the unit movement in x axis what is the moment with y-axis
+
+slope will be same for all the points in a straight line
+but for curve slope will be diff
+
+initialize slope and intercept and calculate the error
+
+and optimize slope and intercept value by adding or subtracting
+
+how to optimize?
+
+cost function--> error of all data point
+
+j(slope,intercept)=1/n summation 1 to n (y-y cap )^2 --->mse
+
+loss function-->error of single data point 
+
+FINAL AIM : to minimize cost function intercept value and slope value will be changing
+
+optimization{minimizing the cost function}
+
+for gradient descent the graph is against cost function and slope and intercept
+
+parabola is called as gradient descent
+
+global minima-->reach this point
+
+convergence algorthim--->repeat until we reach global minima
+
+derivate-->calculate slope at a point
+
+tangent=+ve or -ve
+
+learning rate=step size of the staircase
+
+
+PERFORMANCE METRICS
+
+r-square
+
+adjusted r-square
+
+
+r^2=1-ssr/sst ie{best fit line}/{average of y}
+
+ssr=sum of square residuals or error
+sst=sum of square total
+
+disadvantage :
+when a correlated feature is added accuracy will increase
+when a uncorrelate feature is added also accuracy will increase
+
+
+adjusted r2 square
+
+adjusted r2 square < r2 square
+ 
+adjusted r2 square=1-(1-r2)(N-1)/(N-P-1)
+N=no of data point
+P=X or number of independent variable
+
+r2 penalize the accuracy
+
+ Advantages of mse
+
+1)there is only one global minima
+2)it is differentiable
+
+disadvantages 
+
+1)it is not roboust to outliers
+2)it penalizes the error
+
+
+
+MSE
+
+1)Quadratic equation
+2)It is also called as convex function and it has only global minima
+
+advantages
+ 
+1)It is differentiable
+2)It has one local minima and global minima
+
+disadvantages
+
+1)It is not robust to outliers(penalizes the error)
+2)mse changes the unit
+
+
+MAE
+
+Advantage 
+1)robust to outliers
+2)It will be in the same unit
+
+Disadvantage
+
+1)time complexity is more
+
+conclusion
+
+1)there is linear relationship bet x and y
+2)independent feature should have normal distribution
+3)always take care of multicollinearity
+4)homescedesity-->same variance-->refers to a condition in which the variance of the residual, or error term, in a regression model is constant -->(it is good to have it )
+5)exogenity--->Exogeneity means that each X variable. does not depend on the dependent variable Y; rather Y depends on the Xs and on ɛ, the model error
+6)feature scaling is required
+
+DATA LEAKAGE (Paper leakage)
+
+if testing data is seen by the model we call it as data leakage 
+ 
+OVERFITTING-->TRAINING DATA 100% AND TESTING DATA VERY LOW ACCURACY
+		low BIAS high VARIANCE
+
+RIDGE REGRESSION(L2 REGULARIZATION)-->TO REDUCE OVERFITTING
+
+cost function=1/n summation of i=1 to n (y-y cap)^2+lambda summation i=1 to n (slope)^2
+
+lambda is a hyperparameter(0.0001-10)
+
+relation between lambda and slope is inversely proportional
+
+when lambda increase error increases and slope decreases
+
+
+LASSO REGRESSION (L1 REGULARIZATION)-->FEATURE SELECTION
+
+cost function=1/n summation of i=1 to n (y-y cap)^2+lambda summation i=1 to n |(slope)|
+
+
+
+How feature selection works
+example : h(teta)=intercept + 0.75x1+0.25x2+0.12x3
+	
+	 if there is unit change in x1 there will be 0.75 change in y
+	 if there is unit change in x2 there will be 0.25 change in y
+	 if there is unit change in x3 there will be 0.12 change in y
+
+we know that lambda is inversely proportional to slope 
+as lamdba increase the slope value decreases
+so when we play with the lambda value at some point of time the x3 value will be reduced and feature selection will happen
+
+so only x1 and x2 will be used for prediction
+
+
+WHY RIDGE regression can not be used for feature selection?
+
+because it does not make the coefficient to zero since it is having sqare root term
+
+
+ELASTIC NET(COMBINATION OF L1 AND L2)
+
+It is used to reduce overfitting and feature selection
+
+RIDGE AND LASSO
+
+
+cost function=1/n summation of i=1 to n (y-y cap)^2+lambda1 summation i=1 to n (slope)^2+lambda2 summation i=1 to n |(slope)|
+
+lambda 1 and lambda2 are hyperparameters
+
+
+steps
+
+1)divide the dataset into independent and dependent features
+2)divide into train and test
+3)feature scaling
+4)model training
+5)model fit
+6)coeff and intercept
+7)prediction
+8)mse , mae ,rmse
+
+
+
+fit=calculate mean and standard deviation
+transform=apply z-score formula
+
+fit_transorm=it calculates mean,standard deviation and it applies the z-score formula
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
