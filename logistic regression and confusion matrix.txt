@@ -1,0 +1,163 @@
+LOGISTIC REGRESION
+
+To solve classification problem
+1)binary classification
+2)multi-class classification
+
+
+AIM : To create a best fit line which is used to classify all the points
+	1)output between (0,1)
+	2)outliers will change the best fit line 
+
+	to solve above two cases the best fit line is squashed  
+
+--->IMP Question?
+can we solve classification problem using regression
+
+due to outliers the best fit line penalizes 
+
+so if we squash(cut the best fit line (to 0,1)) it it will be solved 
+
+In Linear Regression we only create best fit line but here we squash it bet(0,1)
+
+STEPS 
+
+1)best fit line
+2)squash(best fit line)
+
+squashing is done using sigmoid function
+
+sigmoid function = 1/1+e^-z , where z is mx+c ie slope 
+
+
+How does logistic regression solve classification?
+
+thresold is fixed by the domain expertize
+
+
+why logistic regression is not called as logistic classification?
+
+because it uses regression internally to make the best fit line 
+
+
+
+COST FUNCTION 
+
+WE can not use mse because it will give non convex function
+so log loss was introduced
+log loss also follows the parabola curve
+
+
+log loss=-ylog(ycap)-(1-y)log(1-ycap)
+
+
+cost function={-log ycap  if y=1
+		   -log 1-ycap if y=0
+
+
+final aim : minimize the cost function by changing the values of slope and intercept
+
+
+
+
+
+
+LOGISTICS REGRESSION WITH REGULARIZATION PARAMETERS
+
+
+
+
+
+
+IN sklearn website c is used instead of lambda
+
+c is inversely proportional to lambda
+
+
+
+
+
+Multiclass Logistic Regression
+
+multinomial--->index of output
+ovr-->one vs rest--->probabilities of category
+
+In ovr -->for each category each model will be created and probability will be given
+in multinomial -->for each category each model will be created and index will be given
+
+if we choose ovr then binary problem is fit for each label 
+
+
+
+
+CONFUSION MATRIX
+
+1-->POSITIVE
+0-->NEGATIVE
+
+IF 1=1 IT IS TRUE
+0=0 IT IS TRUE
+
+0=1 AND 1=0 IS FALSE
+
+TOP ITS ACTUAL 
+AND SIDE IT IS PREDICTED
+
+
+ACCURACY=DIAGONAL ELEMENTS
+
+		=TP+TN/TP+TN+FN+Fp
+
+FOR IMBALANCE DATASET ACCURACY WILL NOT WORK PROPERLY
+
+WE GO WITH PRECISION(we go with first row)
+
+PRESICION=TP/TP+FP
+
+OUT OF all the actual values how many are correctly classified
+
+when fp is imp we go with precision
+generally not related to human beings
+
+
+RECALL=TP/TP+FN(we go with first column)
+
+OUT OF all the predicted values how many are correctly classified
+
+when fn is imp we go with recall 
+generally when  related to human beings
+
+
+
+
+f-beta score 
+tommorow the share market will crash or not 
+reduce fp and fn 
+protection of people as well as companies
+
+f-beta score=(1+beta^2)*(precision*recall)/(beta^2)(precision+recall)
+
+1)when fp and fn are both imp
+
+beta=1
+this case the formula will be similar to harmonic mean
+
+2)when fp>fn  fp is more important than fn
+beta=0.5
+
+3)fn > fp fn is more important than fp
+beta=2
+
+note : positive means go towards negative(beta=0.5)
+	 negative means go towards positive(beta=2)
+
+
+
+
+
+
+
+
+
+
+ 
